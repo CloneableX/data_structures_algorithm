@@ -25,6 +25,7 @@ public class ArrayStack {
     }
 
     public String pop() {
+        if(topIndex == 0) {return null;}
         String stackTop = stack[topIndex];
         --topIndex;
         return stackTop;
