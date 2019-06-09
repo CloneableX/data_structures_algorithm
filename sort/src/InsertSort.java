@@ -21,18 +21,17 @@ public class InsertSort extends Sort {
     public void sort(int[] array, int len) {
         for(int i = 1; i < len; i++) {
             int value = array[i];
-            for(int j = i -1; j >= 0; j--) {
-                printArray(array);
+            int j = i -1;
+            for(; j >= 0; j--) {
                 if(value < array[j]) {
                     array[j + 1] = array[j];
-                    if(j == 0) {
-                        array[j] = value;
-                    }
                 } else {
-                    array[j + 1] = value;
                     break;
                 }
             }
+
+            // insert value to suitable site of arrays
+            array[j + 1] = value;
         }
     }
 }
